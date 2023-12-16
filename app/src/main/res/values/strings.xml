@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Brait Example</string>
+    <string name="app_name">Brait</string>
     <string name="masuk">Masuk</string>
     <string name="password">Password</string>
     <string name="email">Email</string>

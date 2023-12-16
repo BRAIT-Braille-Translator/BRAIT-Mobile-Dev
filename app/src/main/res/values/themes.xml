@@ -2,7 +2,11 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.BraitExample" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/orange</item>
+        <!-- Secondary Color -->
+        <item name="colorSecondary">@color/grey_dark1</item>
+        <!-- Aksen Color-->
+        <item name="textInputStyle">@color/grey_dark1</item>
     </style>
 
     <style name="Theme.BraitExample" parent="Base.Theme.BraitExample" />
