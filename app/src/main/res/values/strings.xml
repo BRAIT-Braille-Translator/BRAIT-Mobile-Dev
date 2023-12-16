@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Brait Example</string>
+    <string name="masuk">Masuk</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="konfirm_password">Konfirm Password</string>
+</resources>
