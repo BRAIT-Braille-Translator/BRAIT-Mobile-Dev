@@ -81,7 +81,7 @@
         android:layout_marginEnd="15dp"
         android:layout_marginStart="15dp"
         android:background="@drawable/rounded_button"
-        android:text="@string/masuk" />
+        android:text="@string/daftar" />
 
     <TextView
         android:id="@+id/createAccount"
