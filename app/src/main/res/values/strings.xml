@@ -5,4 +5,6 @@
     <string name="password">Password</string>
     <string name="email">Email</string>
     <string name="konfirm_password">Konfirm Password</string>
+    <string name="hasil_terjemahan">Hasil Terjemahan</string>
+    <string name="terjemahkan">Terjemahkan</string>
 </resources>
