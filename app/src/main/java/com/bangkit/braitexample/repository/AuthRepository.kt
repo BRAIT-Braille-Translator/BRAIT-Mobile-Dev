@@ -25,6 +25,10 @@ class AuthRepository(
         userPreference.saveSession(user)
     }
 
+    suspend fun logout() {
+        userPreference.logout()
+    }
+
      fun postRegister(username: String, email: String, password: String): LiveData<Result<RegisterResponse>> = liveData {
         emit(Result.Loading)
         try {

@@ -3,6 +3,7 @@ package com.bangkit.braitexample.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
 import com.bangkit.braitexample.data.model.User
@@ -28,29 +29,41 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun setupAction() {
+
+        binding.createAccount.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.login.setOnClickListener {
             val email = binding.etEmail.text.toString()
             val password = binding.etPassword.text.toString()
 
             viewModel.postLogin(email, password).observe(this) { result ->
                 when (result) {
-                    is Result.Loading -> {}
+                    is Result.Loading -> {
+                        binding.loadingProgressBar.visibility = View.VISIBLE
+                    }
+
                     is Result.Success -> {
-                        Toast.makeText(this, "Login ${result.data.message}", Toast.LENGTH_SHORT)
+                        binding.loadingProgressBar.visibility = View.GONE
+                        Toast.makeText(this,result.data.message, Toast.LENGTH_SHORT)
                             .show()
                         val response = result.data
                         viewModel.saveSession(User(response.data.accessToken))
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                        finishAffinity()
                     }
                     is Result.Error -> {
+                        binding.loadingProgressBar.visibility = View.GONE
                         Toast.makeText(this, "Login ${result.error}", Toast.LENGTH_SHORT)
                             .show()
                     }
+
+                    else -> {}
                 }
             }
-        }
-        binding.createAccount.setOnClickListener {
-            val intent = Intent(this, RegisterActivity::class.java)
-            startActivity(intent)
         }
     }
 }
