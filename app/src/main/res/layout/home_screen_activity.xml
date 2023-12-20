@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/white"
     android:padding="16dp">
 
@@ -37,7 +37,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="60dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/rounded_background"
         android:padding="24dp">
@@ -63,17 +63,50 @@
 
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/tv_history_title"
+    <Button
+        android:id="@+id/bt_translate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/image_upload_container"
+        android:layout_below="@+id/image_upload_container"
+        android:layout_marginTop="40dp"
+        android:text="@string/terjemahkan"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_upload_container" />
+
+    <RelativeLayout
+        android:id="@+id/result_container"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/bt_translate"
         android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:textStyle="normal"
-        android:text="History"
-        android:textSize="18sp" />
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/rounded_background"
+        android:padding="24dp">
+
+        <TextView
+            android:id="@+id/tv_title_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="sans-serif-condensed-medium"
+            android:text="@string/hasil_terjemahan"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/tv_resultTranslation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_title_result"
+            android:layout_marginTop="20dp"
+            android:fontFamily="sans-serif"
+            android:textAlignment="center"
+            tools:text="Disini nanti akan ditampilkan hasil"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>
