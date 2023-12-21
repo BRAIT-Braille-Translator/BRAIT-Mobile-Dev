@@ -8,10 +8,13 @@ import com.bangkit.braitexample.data.model.UserPreference
 import com.bangkit.braitexample.data.request.LoginRequest
 import com.bangkit.braitexample.data.request.RegisterRequest
 import com.bangkit.braitexample.data.response.LoginResponse
+import com.bangkit.braitexample.data.response.PredictImageResponse
 import com.bangkit.braitexample.data.response.RegisterResponse
 import com.bangkit.braitexample.retrofit.ApiService
 import com.bangkit.braitexample.data.response.Result
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
+import okhttp3.MultipartBody
 
 class AuthRepository(
     private val apiService: ApiService,
@@ -23,10 +26,6 @@ class AuthRepository(
     }
     suspend fun saveSession(user: User) {
         userPreference.saveSession(user)
-    }
-
-    suspend fun logout() {
-        userPreference.logout()
     }
 
      fun postRegister(username: String, email: String, password: String): LiveData<Result<RegisterResponse>> = liveData {
@@ -51,6 +50,19 @@ class AuthRepository(
             emit(Result.Success(response))
         } catch (e:Exception) {
             Log.d("Login", e.message.toString())
+            emit(Result.Error(e.message.toString()))
+        }
+    }
+
+    fun predictImage(file : MultipartBody.Part) : LiveData<Result<PredictImageResponse>> = liveData {
+        emit(Result.Loading)
+        try {
+            val user = userPreference.getSession().first()
+            val token = user.token
+            val response = apiService.postImage(file)
+            Log.d("Token", user.token)
+            emit(Result.Success(response))
+        } catch (e: Exception) {
             emit(Result.Error(e.message.toString()))
         }
     }

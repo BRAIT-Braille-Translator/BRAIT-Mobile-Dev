@@ -52,6 +52,7 @@ class LoginActivity : AppCompatActivity() {
                         val response = result.data
                         viewModel.saveSession(User(response.data.accessToken))
                         val intent = Intent(this, MainActivity::class.java)
+                        intent.putExtra(EXTRA_KEY, response.data.accessToken)
                         startActivity(intent)
                         finishAffinity()
                     }
@@ -65,5 +66,8 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+    companion object {
+        const val EXTRA_KEY = "extra_key"
     }
 }

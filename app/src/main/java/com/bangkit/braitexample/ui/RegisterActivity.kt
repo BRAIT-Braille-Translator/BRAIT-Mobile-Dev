@@ -31,7 +31,7 @@ class RegisterActivity : AppCompatActivity() {
         binding.login.setOnClickListener {
             val name = binding.etNama.text.toString()
             val email = binding.etEmail.text.toString()
-            val password = binding.etKonfirmPassword.text.toString()
+            val password = binding.etPassword.text.toString()
             viewModel.postRegister(name, email, password).observe(this) { result ->
                 when (result) {
 
