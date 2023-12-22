@@ -73,12 +73,12 @@
         android:text="@string/daftar" />
 
     <TextView
-        android:id="@+id/createAccount"
+        android:id="@+id/tv_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/login"
         android:layout_marginTop="20dp"
-        android:text="Membuat Akun?"
+        android:text="Login?"
         android:textColor="#FD7014"
         android:gravity="center"/>
 

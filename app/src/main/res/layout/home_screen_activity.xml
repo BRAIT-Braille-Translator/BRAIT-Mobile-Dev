@@ -56,11 +56,12 @@
 
     <Button
         android:id="@+id/bt_translate"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/image_upload_container"
         android:layout_marginTop="40dp"
         android:text="@string/terjemahkan"
+        android:background="@drawable/rounded_button"
         android:layout_centerHorizontal="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

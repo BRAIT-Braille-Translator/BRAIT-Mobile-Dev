@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
                                 "Predict Image ${result.data.message}",
                                 Toast.LENGTH_SHORT
                             ).show()
-                            //val response = result.data.data.text
+
                         }
                         is Result.Error -> {
                             binding.loadingProgressBar.visibility = View.GONE

@@ -28,6 +28,11 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun setupAction() {
+        binding.tvLogin.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.login.setOnClickListener {
             val name = binding.etNama.text.toString()
             val email = binding.etEmail.text.toString()
