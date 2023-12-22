@@ -18,12 +18,15 @@ Make sure you have the following installed on your development machine:
 
 ## Installation
 1. Clone the repository:
-   ```bash git clone https://github.com/BRAIT-Braille-Translator/BRAIT-Mobile-Dev.git
+   ```bash
+   git clone https://github.com/BRAIT-Braille-Translator/BRAIT-Mobile-Dev.git
 2. Navigate to the project directory:
-   ```bash cd BRAIT-Mobile-Dev
+   ```bash
+   cd BRAIT-Mobile-Dev
 3. Connect a device or start an emulator (AVD)
 4. Run the app:
-   ```run
+   ```
+   run
 5. The app should now be running on your device or emulator.
 
 ## Usage
