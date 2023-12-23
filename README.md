@@ -9,7 +9,7 @@ This repository contains the mobile application development code for Brait, an a
 - **Homepage**: display the main feature translate braille to Latin letters by <br>entering an image then displaying the results of the translation
 
 ## Getting Started
-To get started with the Ternaku mobile app, follow the instructions below.
+To get started with the Brait mobile app, follow the instructions below.
 
 Make sure you have the following installed on your development machine:
 - **Android Studio** : Android Studio is an integrated development environment (IDE) specifically designed for building Android applications (for Android development). [Installation Guide](https://developer.android.com/studio?hl=id)
